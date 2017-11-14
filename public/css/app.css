@@ -5,3 +5,18 @@
 .search-input {
     margin-bottom: 24px;
 }
+
+.case-card {
+    background: #fafafa;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.case-card .meta {
+    display: flex;
+}
+
+.case-card img {
+    width: 300px;
+}

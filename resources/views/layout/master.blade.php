@@ -33,12 +33,23 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/create">Tilføj Case</a>
-                </li>
-                <li class="nav-item">
+                @if(Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create">Tilføj Case</a>
+                    </li>
+                @endif
+                {{--  <li class="nav-item">
                     <a class="nav-link" href="#">Stats</a>
-                </li>
+                </li>  --}}
+                @if(Auth::check())
+                    <li class="nav-item">
+                        <a href="{{ url('/logout') }}" class="nav-link"
+                            onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>
@@ -52,3 +63,7 @@
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
+
+<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+    {{ csrf_field() }}
+</form>

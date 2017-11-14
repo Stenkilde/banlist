@@ -1,12 +1,8 @@
 @extends('layout.master')
 
 @section('content')
-    <h1>Tilføj case</h1>
-    <form action="/create" method="POST">
-        <div class="form-group">
-            <label for="name">Navn</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Indsæt navn" required>
-        </div>
+    <h1>Tilføj post</h1>
+    <form action="/post/create" method="POST">
         <div class="form-group">
             <label for="facebook_id">Facebook Id</label>
             <input type="text" class="form-control" name="facebook_id" id="facebook_id" placeholder="Facebook Id">
@@ -16,8 +12,6 @@
             <select class="form-control" name="type" id="type" required>
                 <option value="">-- Vælg type--</option>
                 <option value="Advarsel">Advarsel</option>
-                <option value="Ban">Ban</option>
-                <option value="Andet">Andet</option>
             </select>
         </div>
         <div class="form-group">
@@ -42,5 +36,6 @@
         <button type="submit" class="btn btn-primary">Submit</button>
 
         {{ csrf_field() }}
+        <input type="hidden" name="case_id" value="{{$id}}">
     </form>
 @endsection

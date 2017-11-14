@@ -13,21 +13,27 @@
 
 
 // Search routes
-Route::post('/search', 'SearchController@search');
+Route::post('/search', 'SearchController@search')->middleware('auth');
 
 // Ban routes
-Route::get('/', 'BanController@view');
-Route::get('/api/ban', 'BanController@index');
-Route::get('/api/ban/{id}', 'BanController@single');
-Route::post('/api/ban', 'BanController@create');
+Route::get('/', 'BanController@view')->middleware('auth');
+Route::get('/api/ban', 'BanController@index')->middleware('auth');
+Route::get('/api/ban/{id}', 'BanController@single')->middleware('auth');
+Route::post('/api/ban', 'BanController@create')->middleware('auth');
 
 // User routes
-Route::post('/api/user', 'UserController@create');
+Route::post('/api/user', 'UserController@create')->middleware('auth');
 // Auth based routes
-Route::post('/api/auth', 'AuthController@authenticate');
-Route::get('api/me', 'UserController@me');
+Route::post('/api/auth', 'AuthController@authenticate')->middleware('auth');
+Route::get('api/me', 'UserController@me')->middleware('auth');
 
 // Case Routes
-Route::get('/case/{id}', 'CaseController@single');
-Route::get('/create', 'CaseController@createView');
-Route::post('/create', 'CaseController@create');
+Route::get('/case/{id}', 'CaseController@single')->middleware('auth')->name('case');
+Route::get('/create', 'CaseController@createView')->middleware('auth');
+Route::post('/create', 'CaseController@create')->middleware('auth');
+
+// Post Routes
+Route::get('/post/{id}', 'BanController@createView')->middleware('auth');
+Route::post('/post/create', 'BanController@post')->middleware('auth');
+
+Auth::routes();

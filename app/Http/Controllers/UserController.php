@@ -33,4 +33,8 @@ class UserController extends Controller
         return $user;
     }
 
+    public function view() {
+        return view('user.login');
+    }
+
 }
