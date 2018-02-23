@@ -13,7 +13,7 @@ class ReasonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reason', function (Blueprint $table) {
+        Schema::create('reasons', function (Blueprint $table) {
             $table->increments('id');
             $table->string('reason');
             $table->timestamps();
