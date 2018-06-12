@@ -31,7 +31,7 @@
             @foreach ($cases as $case)
                 <tr>
                     <td scope="row">{{$case->name}}</td>
-                    <td scope="row">{{$case->user->firstname}}</td>
+                    <td scope="row">{{$case->user->username}}</td>
                     <td scope="row">{{$case->created_at}}</td>
                     <td scope="row">
                         <div class="btn-group btn-group-sm">
