@@ -25,6 +25,7 @@ class CaseController extends Controller
         $user = Auth::user();
         $case = new Cases;
         $case->name = $request->input('name');
+        $case->facebook_id = $request->input('facebook_id');
         $case->user_id = $user->id;
         $case->save();
 

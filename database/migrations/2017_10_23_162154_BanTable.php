@@ -16,7 +16,6 @@ class BanTable extends Migration
         Schema::create('bans', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
-            $table->string('facebook_id')->nullable();
             $table->string('description')->nullable();
             $table->string('reason_id');
             $table->string('case_id');

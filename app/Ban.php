@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ban extends Model
 {
     protected $fillable = [
-        'type', 'facebook_id', 'description', 'reason_id', 'img_src', 'case_id',
+        'type', 'description', 'reason_id', 'img_src', 'case_id',
     ];
 
     public function reason() {

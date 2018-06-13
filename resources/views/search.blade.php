@@ -30,12 +30,12 @@
             <tbody>
             @foreach ($cases as $case)
                 <tr>
-                    <td scope="row">{{$case->name}}</td>
-                    <td scope="row">{{$case->user->name}} - {{$case->user->username}}</td>
-                    <td scope="row">{{$case->created_at}}</td>
+                    <td scope="row">{{$case['name']}}</td>
+                    {{-- <td scope="row">{{$case[user->name}} - {{$case->user->username}}</td> --}}
+                    <td scope="row">{{$case['created_at']}}</td>
                     <td scope="row">
                         <div class="btn-group btn-group-sm">
-                            <a class="btn btn-primary" href="/case/{{$case->id}}"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-primary" href="/case/{{$case['id']}}"><i class="fa fa-eye"></i></a>
                         </div>
                     </td>
                 </tr>
