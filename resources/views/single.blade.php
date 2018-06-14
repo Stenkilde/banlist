@@ -9,7 +9,7 @@
     <div class="row">
         @foreach ($case->bans as $ban)
             <div class="card" style="width: 20rem; margin: 0 12px 12px;">
-                <img class="card-img-top" src="{{$case->img_src}}" alt="">
+                <img class="card-img-top" src="{{$ban->img_src}}" alt="">
                 <div class="card-body">
                     <h4 class="card-title">{{$ban->type}}</h4>
                     <p class="card-text">{{$ban->description}}</p>
